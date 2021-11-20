@@ -1,20 +1,90 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        Shoes
+      </ion-col>
+      <ion-col size="6">
+        <ion-button color="danger">Manager</ion-button>
+      </ion-col>
+    </ion-row>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-row>
+      <ion-col>
+        <ion-button color="primary" (click)="onButtonClick('1')">1</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="primary" (click)="onButtonClick('2')">2</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="primary" (click)="onButtonClick('3')">3</ion-button>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button color="primary" (click)="onButtonClick('4')">4</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="primary" (click)="onButtonClick('5')">5</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="primary" (click)="onButtonClick('6')">6</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="danger">Buy</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button color="primary" (click)="onButtonClick('7')">7</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="primary" (click)="onButtonClick('8')">8</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="primary" (click)="onButtonClick('9')">9</ion-button>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <p *ngIf="quantity === ''; else elseBlock">Quantity</p>
+        <ng-template #elseBlock> {{ quantity }}</ng-template>
+        
+      </ion-col>
+      <ion-col>
+        <ion-button color="primary" (click)="onButtonClick('0')">0</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let item of items">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-label>{{ item.name }}</ion-label>
+                </ion-col>
+                <ion-col>
+                  <ion-label>{{ item.quantity }}</ion-label>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-label>{{ item.price }}</ion-label>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
