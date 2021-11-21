@@ -36,18 +36,18 @@ export class HomePage implements OnInit {
   }
 
   onBuyButton() {
-    if ( this.selectedItem ) {
+    if ( this.selectedItem && this.quantity ) {
       const currentQuantity = Number( this.quantity );
       this.selectedItem.quantity -= currentQuantity;
       this.historyService.addNew( this.selectedItem, currentQuantity, this.total );
     } else {
-      this.presentToast();
+      this.presentSelectToast();
     }
   }
 
-  async presentToast() {
+  async presentSelectToast() {
     const toast = await this.toastController.create( {
-      message: 'You need to select an item from the list',
+      message: 'You need to select an item and quantity',
       duration: 2000
     } );
     toast.present();
