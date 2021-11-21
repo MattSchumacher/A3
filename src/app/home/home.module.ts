@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { ItemService } from '../services/item.service';
+import { HistoryService } from '../services/history.service';
 
 
 @NgModule({
@@ -14,9 +15,6 @@ import { ItemService } from '../services/item.service';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-  ],
-  providers: [
-    ItemService
   ],
   declarations: [HomePage]
 })

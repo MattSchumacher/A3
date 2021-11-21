@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Restock</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">New Quantity</ion-label>
+          <ion-input type="number" [(ngModel)]="newQuantity" ></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" (click)="onRestockButton()">Restock</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="block" color="danger" (click)="onCancelButton()">Cancel</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let item of items" (click)="onItemSelect(item)">
+            <ion-label>{{ item.name }}</ion-label>
+            <ion-note slot="end">{{ item.quantity }}</ion-note>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

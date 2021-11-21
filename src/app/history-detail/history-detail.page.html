@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>History Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid>
+  <ion-row>
+    <ion-col id="content" size="10" *ngIf="item">
+      <ion-label>{{ item.item.name }}</ion-label>
+      <ion-label>{{ item.quantity  }}</ion-label>
+      <ion-label>{{ item.purchaseDate | date:'medium'  }}</ion-label>
+      <ion-label>Total Amount: ${{ item.total  }}</ion-label>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

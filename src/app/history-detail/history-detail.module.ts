@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HistoryPageRoutingModule } from './history-routing.module';
+import { HistoryDetailPageRoutingModule } from './history-detail-routing.module';
 
-import { HistoryPage } from './history.page';
+import { HistoryDetailPage } from './history-detail.page';
 import { HistoryService } from '../services/history.service';
 
 @NgModule( {
@@ -14,8 +14,8 @@ import { HistoryService } from '../services/history.service';
     CommonModule,
     FormsModule,
     IonicModule,
-    HistoryPageRoutingModule
+    HistoryDetailPageRoutingModule
   ],
-  declarations: [ HistoryPage ]
+  declarations: [ HistoryDetailPage ]
 } )
-export class HistoryPageModule { }
+export class HistoryDetailPageModule { }
