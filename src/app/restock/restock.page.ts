@@ -24,7 +24,7 @@ export class RestockPage implements OnInit {
   }
 
   onRestockButton() {
-    this.currentItem.quantity = this.newQuantity;
+    this.currentItem.quantity += this.newQuantity;
     this.newQuantity = null;
   }
 
